@@ -28,6 +28,7 @@ header {
     height: 10vh;
     position: sticky;
     top: 0;
+    overflow: hidden;
 }
 
 header h3 {
@@ -47,6 +48,37 @@ header h3 {
 
 .navbar a:hover {
     background-color: gray;
+}
+
+.hamburger-icon {
+    display: none;
+    margin-right: 1rem;
+}
+
+.hamburger-icon:hover {
+    background-color: gray;
+}
+
+.hamburger-line {
+    height: 5px;
+    width: 35px;
+    margin: 5px;
+    background-color: rgb(225, 225, 225);
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 10vh;
+        right: 0;
+        width: 100%;
+        background-color: rgb(42, 44, 61);
+    }
+    .hamburger-icon {
+        display: block;
+    }
 }
 
 

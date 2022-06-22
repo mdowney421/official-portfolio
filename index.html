@@ -6,31 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matt Downey - Software Engineer</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <!-- LINKS FOR GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- HEADER / NAV BAR -->
     <header>
         <h3>MD</h3>
-        <div class="navbar">
+        <div class="navbar" id="navbar">
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </div>
+        <div class="hamburger-icon" onclick="showDropDown()">
+            <div class="hamburger-line"></div><div class="hamburger-line"></div><div class="hamburger-line"></div>
+        </div>
     </header>
+
+    <!-- HERO SECTION -->
     <section id="home">
         <div class="overlay">
             <h1>hi, i'm matt downey.</h1>
             <h2>i build full-stack web applications.</h2>
         </div>
     </section>
+
+    <!-- ABOUT ME SECTION -->
     <section id="about">
         <h3>about me</h3>
         <p>as a <b>results-driven</b> software developer with an extensive <b>background in engineering</b>, i love solving complex challenges and building full-stack web applications. logic-minded by nature, i have a knack for <b>breaking down large problems</b> into smaller, solvable parts. i am <b>self-motivated</b>, <b>team-oriented</b>, and i get excited to write <b>clean, scalable code</b>. i strive to get better at what i do every day, so that i can positively influence others and make a real impact through my work.</p>
     </section>
+
+    <!-- SKILLS LIST SECTION -->
     <section id="skills">
         <h3>some things i know</h3>
         <div class="skills-container">
@@ -104,6 +117,8 @@
             </div>
         </div>
     </section>
+
+    <!-- PROJECT WORK SECTION -->
     <section id="projects">
         <h3>coding projects</h3>
         <div class="project">
@@ -135,6 +150,8 @@
         </div>
         <p>*please note that heroku may take a minute to load</p>
     </section>
+
+    <!-- CONTACT INFO SECTION -->
     <section id="contact">
         <h3>contact me</h3>
         <form action="mailto:mattdowney421@gmail.com" method="POST" enctype="multipart/form-data" name="EmailForm">
@@ -145,6 +162,8 @@
         <a><button>the pretty one</button></a>
         <h3 class="last">or checkout my github and linkedin below</h3>
     </section>
+
+    <!-- FOOTER -->
     <footer>
         <a href="https://github.com/mdowney421" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" alt="git hub logo" /></a>
         <p>designed and built by Matt Downey</p>
