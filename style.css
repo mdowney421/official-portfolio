@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -15,6 +16,10 @@ header {
     height: 10vh;
 }
 
+header h3 {
+    margin-left: 1rem;
+}
+
 .navbar {
     display: flex;
 }
@@ -22,7 +27,7 @@ header {
 .navbar a {
     text-decoration: none;
     color: black;
-    margin: auto 1rem;
+    padding: 1rem 1rem;
 }
 
 .navbar a:hover {
@@ -32,31 +37,40 @@ header {
 
 /* HERO STYLING */
 #home {
-    height: 100vh;
+    height: 110vh;
+    background-image: url('https://images.pexels.com/photos/574077/pexels-photo-574077.jpeg');
+    background-position: center;
+    background-size: cover;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 110vh;
+    color: antiquewhite;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url('https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg');
-    background-position: center;
-    background-size: cover;
-    color: antiquewhite;
-    background-color: black;
 }
 
 
 /* ABOUT ME STYLING */
 #about {
     background-color: lightgray;
-    height: 100vh;
+    height: 110vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
+#about p {
+    width: 80%;
+    margin: 0 auto;
+}
+
 
 /* SKILLS STYLING */
 #skills {
-    height: 100vh;
+    height: 110vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -75,6 +89,8 @@ header {
 
 .skill {
     background-color: lightgrey;
+    padding: 1em;
+    border-radius: 1em;
 }
 
 .skill img {
@@ -84,7 +100,7 @@ header {
 
 /* PROJECTS STYLING */
 #projects {
-    height: 100vh;
+    height: 110vh;
     background-color: lightgray;
     display: flex;
     flex-direction: column;
@@ -94,7 +110,7 @@ header {
 
 /* CONTACT STYLING */
 #contact {
-    height: 100vh;
+    height: 110vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
