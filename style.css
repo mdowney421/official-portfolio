@@ -87,6 +87,12 @@ header h3 {
     line-height: 150%;
 }
 
+@media only screen and (min-width: 900px) {
+    #about p {
+        width: 60%;
+    }
+}
+
 
 /* SKILLS STYLING */
 #skills {
@@ -118,20 +124,30 @@ header h3 {
     width: 4em;
 }
 
+@media only screen and (min-width: 1080px) {
+    #skills {
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 
 /* PROJECTS STYLING */
 #projects {
-    height: 110vh;
+    min-height: 110vh;
     background-color: lightgray;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 1rem;
 }
 
 .project {
     display: flex;
     justify-content: center;
-    padding: 1rem;
+    width: 90%;
+    margin: 1rem auto;
 }
 
 .project img {
@@ -141,11 +157,28 @@ header h3 {
 }
 
 .project-description {
-    padding: 0 1rem;
+    padding-left: 1rem;
 }
 
 .project-description p {
     margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 590px) {
+    .project {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .project img {
+        margin-bottom: 1rem;
+    }
+}
+
+@media only screen and (min-width: 965px) {
+    .project {
+        width: 60%;
+    }
 }
 
 
@@ -156,6 +189,19 @@ header h3 {
     flex-direction: column;
     justify-content: center;
 }
+
+#contact form {
+    margin-bottom: 3rem;
+}
+
+button {
+    margin: 0.25rem auto;
+}
+
+.last {
+    margin-top: 2rem;
+}
+
 
 /* FOOTER STYLING */
 footer {
@@ -168,4 +214,10 @@ footer {
 
 footer img {
     width: 3em;
+}
+
+@media only screen and (max-width: 480px) {
+    footer p {
+        font-size: 60%;
+    }
 }
