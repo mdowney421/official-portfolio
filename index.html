@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -24,12 +24,12 @@
     <section id="home">
         <div class="overlay">
             <h1>hi, i'm matt downey.</h1>
-            <h2>i build full stack web applications.</h2>
+            <h2>i build full-stack web applications.</h2>
         </div>
     </section>
     <section id="about">
         <h3>about me</h3>
-        <p>as a results-driven software developer with an extensive background in engineering, i love solving complex challenges and building full-stack web applications. logic-minded by nature, i have a knack for breaking down large problems into smaller, solvable parts. i am self-motivated, team-oriented, and i get excited to write clean, scalable code. i strive to get better at what i do every day, so that i can positively influence others and make a real impact through my work.</p>
+        <p>as a <b>results-driven</b> software developer with an extensive <b>background in engineering</b>, i love solving complex challenges and building full-stack web applications. logic-minded by nature, i have a knack for <b>breaking down large problems</b> into smaller, solvable parts. i am <b>self-motivated</b>, <b>team-oriented</b>, and i get excited to write <b>clean, scalable code</b>. i strive to get better at what i do every day, so that i can positively influence others and make a real impact through my work.</p>
     </section>
     <section id="skills">
         <h3>some things i know</h3>
@@ -107,14 +107,33 @@
     <section id="projects">
         <h3>coding projects</h3>
         <div class="project">
-            <h3>PumpedUp - Fitness Tracker</h3>
+            <img src="./media/pumpedup.png" alt="picture of pumped up project">
+            <div class="project-description">
+                <h4>PumpedUp - fitness tracker</h4>
+                <p>workout tracking app with full user authorization. users can log workouts, see workout history, and track key metrics.</p>
+                <p>build method: ejs, bootstrap, express, mongodb</p>
+                <a href="https://pumpedup-web-application.herokuapp.com/" target="_blank">see it in action*</a>
+            </div>
         </div>
         <div class="project">
-            <h3>The Shop - eCommerce Store</h3>
+            <img src="./media/stockaid.png" alt="picture of stock aid project">
+            <div class="project-description">
+                <h4>StockAid - portfolio management tool</h4>
+                <p>stock portfolio tools where users can track specific stock information gathered from APIs. users can also choose from recommended stocks.</p>
+                <p>build method: MERN stack</p>
+                <a href="https://stockaid-portfolio-manager.herokuapp.com/" target="_blank">see it in action*</a>
+            </div>
         </div>
         <div class="project">
-            <h3>StockAid - Stock Information App</h3>
+            <img src="./media/theshop.png" alt="picture of the shop project">
+            <div class="project-description">
+                <h4>The Shop - ecommerce app</h4>
+                <p>a typical online store with full user authorization. users can see deals, search and filter, add to cart, and checkout.</p>
+                <p>build method: react/django/postgresql stack</p>
+                <a href="https://theshopfront.herokuapp.com/" target="_blank">see it in action*</a>
+            </div>
         </div>
+        <p>*please note that heroku may take a minute to load</p>
     </section>
     <section id="contact">
         <h3>send me a message!</h3>
@@ -126,9 +145,9 @@
         </form>
     </section>
     <footer>
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" alt="git hub logo" />
+        <a href="https://github.com/mdowney421"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" alt="git hub logo" /></a>
         <p>designed and built by Matt Downey</p>
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="linked in logo" />
+        <a href="https://www.linkedin.com/in/matthewpdowney/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="linked in logo" /></a>
     </footer>
 </body>
 </html>
