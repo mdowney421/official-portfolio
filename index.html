@@ -122,52 +122,66 @@
     <section id="projects">
         <h3>coding projects</h3>
         <div class="project">
-            <img src="./media/pumpedup.png" alt="picture of pumped up project">
+            <a href="https://pumpedup-web-application.herokuapp.com/" target="_blank"><img src="./media/pumpedup.png" id="project" alt="picture of pumped up project"></a>
             <div class="project-description">
                 <h4>PumpedUp - fitness tracker</h4>
                 <p>workout tracking app with full user authorization. users can log workouts, see workout history, and track key metrics.</p>
                 <p>build method: ejs, bootstrap, express, mongodb</p>
-                <a href="https://pumpedup-web-application.herokuapp.com/" target="_blank">see it in action*</a>
+                <a href="https://github.com/mdowney421/pumpedup-web-application" target="_blank"><button>front and back end repo</button></a>
             </div>
         </div>
         <div class="project">
-            <img src="./media/stockaid.png" alt="picture of stock aid project">
+            <a href="https://civil-discourse-frontend.herokuapp.com/" target="_blank"><img src="./media/civildiscourse.png" id="project" alt="picture of civil discourse project"></a>
+            <div class="project-description">
+                <h4>Civil Discourse - social media site</h4>
+                <p>social media app that pulls current news from an API. users can like, dislike, or comment on articles and downvote misinformative comments.</p>
+                <p>build method: PERN stack</p>
+                <a href="https://github.com/mdowney421/civil-discourse-frontend" target="_blank"><button>front end repo</button></a>
+                <a href="https://github.com/mdowney421/civil-discourse-backend" target="_blank"><button>back end repo</button></a>
+            </div>
+        </div>
+        <div class="project">
+            <a href="https://theshopfront.herokuapp.com/" target="_blank"><img src="./media/theshop.png" id="project" alt="picture of the shop project"></a>
+            <div class="project-description">
+                <h4>The Shop - ecommerce app</h4>
+                <p>a typical online store with full user authorization. users can see deals, search and filter, add to cart, and checkout.</p>
+                <p>build method: react/django/sql stack</p>
+                <a href="https://github.com/JohnKomninos/TheShop" target="_blank"><button>front end repo</button></a>
+                <a href="https://github.com/mdowney421/the-shop-back-end" target="_blank"><button>back end repo</button></a>
+            </div>
+        </div>
+        <div class="project">
+            <a href="https://stockaid-portfolio-manager.herokuapp.com/" target="_blank"><img src="./media/stockaid.png" id="project" alt="picture of stock aid project"></a>
             <div class="project-description">
                 <h4>StockAid - portfolio management tool</h4>
                 <p>stock portfolio tool where users can track specific stock information gathered from APIs. users can also choose from recommended stocks.</p>
                 <p>build method: MERN stack</p>
-                <a href="https://stockaid-portfolio-manager.herokuapp.com/" target="_blank">see it in action*</a>
+                <a href="https://github.com/eckmanmatt/stockaid-frontend/tree/master" target="_blank"><button>front end repo</button></a>
+                <a href="https://github.com/mdowney421/stockaid-back-end" target="_blank"><button>back end repo</button></a>
             </div>
         </div>
-        <div class="project">
-            <img src="./media/theshop.png" alt="picture of the shop project">
-            <div class="project-description">
-                <h4>The Shop - ecommerce app</h4>
-                <p>a typical online store with full user authorization. users can see deals, search and filter, add to cart, and checkout.</p>
-                <p>build method: react/django/postgresql stack</p>
-                <a href="https://theshopfront.herokuapp.com/" target="_blank">see it in action*</a>
-            </div>
-        </div>
-        <p>*please note that heroku may take a minute to load</p>
+        <p><i>*please note that heroku may take a minute to load</i></p>
     </section>
 
     <!-- CONTACT INFO SECTION -->
     <section id="contact">
-        <h3>contact me</h3>
+        <h3 class="contact-heading">contact me:</h3>
         <form action="mailto:mattdowney421@gmail.com" method="POST" enctype="multipart/form-data" name="EmailForm">
-            <input type="submit" value="send me an email!">
+            <input class="button" type="submit" value="send me an email">
         </form>
-        <h3>check out my resume</h3>
-        <a href="https://docs.google.com/document/d/e/2PACX-1vRLUWCD9iOwOk0RZbmal_23kDpqp2jHNgw2vPlLURkHEwRvX6i-C67hxe7qxg3SbsRM50NMhiQAO32X/pub" target="_blank"><button>the functional one</button></a>
-        <a><button>the pretty one</button></a>
-        <h3 class="last">or checkout my github and linkedin below</h3>
+        <h3 class="contact-heading">check out my resume:</h3>
+        <a href="https://docs.google.com/document/d/e/2PACX-1vRLUWCD9iOwOk0RZbmal_23kDpqp2jHNgw2vPlLURkHEwRvX6i-C67hxe7qxg3SbsRM50NMhiQAO32X/pub" target="_blank"><button>click here</button></a>
+        <!-- <a><button>the pretty one</button></a> -->
+        <h3 class="last">or checkout my github and linkedin:</h3>
+        <div class="links">
+            <a href="https://github.com/mdowney421" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" alt="git hub logo" /></a>
+            <a href="https://www.linkedin.com/in/matthewpdowney/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="linked in logo" /></a>
+        </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <a href="https://github.com/mdowney421" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" alt="git hub logo" /></a>
         <p>designed and built by Matt Downey</p>
-        <a href="https://www.linkedin.com/in/matthewpdowney/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="linked in logo" /></a>
     </footer>
 </body>
 </html>

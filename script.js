@@ -1,3 +1,4 @@
+// FUNCTION FOR DROPDOWN NAV MENU
 const showDropDown = () => {
     const navbar = document.getElementById("navbar")
     if (navbar.style.display === "flex") {
