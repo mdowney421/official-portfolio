@@ -9,6 +9,6 @@ This is a simple HTML, CSS, JavaScript portfolio website to showcase my work. Th
 ## Technologies Used
 * HTML
 * CSS
-* Vanilla JavaScript
+* JavaScript
 * Git & GitHub
 * Netlify
