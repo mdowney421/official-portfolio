@@ -18,9 +18,9 @@ function NavigationBar() {
     const btnRef = React.useRef<HTMLButtonElement | null>(null)
   
     return (
-        <Container position='fixed'>
-            <Button ref={btnRef} onClick={onOpen}>
-                Open
+        <Container position='fixed' pt='1rem'>
+            <Button colorScheme='blackAlpha' textColor='green.100' ref={btnRef} onClick={onOpen}>
+                Where to?
             </Button>
             <Drawer
                 isOpen={isOpen}
@@ -29,7 +29,7 @@ function NavigationBar() {
                 finalFocusRef={btnRef}
             >
                 <DrawerOverlay />
-                <DrawerContent>
+                <DrawerContent bgGradient='linear(to-br, green.200, blue.200)'>
                     <DrawerCloseButton />
                     <DrawerHeader>Create your account</DrawerHeader>
 

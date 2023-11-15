@@ -7,7 +7,7 @@ const Skills = () => {
     const skillList = ['HTML', 'CSS', 'JavaScript', 'Typescript']
 
     return (
-        <Center bg='blue.600' maxWidth='100%' h='100vh'>
+        <Center maxWidth='100%' h='100vh'>
             <Container>
                 <Heading as='h2' size='2xl' textAlign='center'>
                     some things i know

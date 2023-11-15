@@ -3,7 +3,7 @@ import { Heading, Container, Center } from "@chakra-ui/react";
 
 const Welcome = () => {
     return (
-        <Center bg='blue.600' maxWidth='100%' h='100vh'>
+        <Center maxWidth='100%' h='100vh'>
             <Container>
                 <Heading as='h1' size='4xl' textAlign='center'>
                     hi, i'm matt downey.
