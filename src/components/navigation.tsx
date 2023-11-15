@@ -7,10 +7,9 @@ import {
     DrawerCloseButton, 
     DrawerHeader, 
     DrawerBody,
-    DrawerFooter,
     useDisclosure,
-    Input,
     Container,
+    Text
 } from "@chakra-ui/react";
 
 function NavigationBar() {
@@ -20,7 +19,7 @@ function NavigationBar() {
     return (
         <Container position='fixed' pt='1rem'>
             <Button colorScheme='blackAlpha' textColor='green.100' ref={btnRef} onClick={onOpen}>
-                Where to?
+                menu
             </Button>
             <Drawer
                 isOpen={isOpen}
@@ -31,18 +30,25 @@ function NavigationBar() {
                 <DrawerOverlay />
                 <DrawerContent bgGradient='linear(to-br, green.200, blue.200)'>
                     <DrawerCloseButton />
-                    <DrawerHeader>Create your account</DrawerHeader>
+                    <DrawerHeader fontSize='4xl'>where to?</DrawerHeader>
 
                     <DrawerBody>
-                        <Input placeholder='Type here...' />
+                        <a href="#home">
+                            <Text fontSize='3xl'>home</Text>
+                        </a>
+                        <a href="#about">
+                            <Text fontSize='3xl'>about me</Text>
+                        </a>
+                        <a href="#skills">
+                            <Text fontSize='3xl'>skills</Text>
+                        </a>
+                        <a href="#experience">
+                            <Text fontSize='3xl'>experience</Text>
+                        </a>
+                        <a href="#projects">
+                            <Text fontSize='3xl'>coding projects</Text>
+                        </a>
                     </DrawerBody>
-
-                    <DrawerFooter>
-                        <Button variant='outline' mr={3} onClick={onClose}>
-                            Cancel
-                        </Button>
-                        <Button colorScheme='blue'>Save</Button>
-                    </DrawerFooter>
                 </DrawerContent>
             </Drawer>
         </Container>

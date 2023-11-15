@@ -3,7 +3,7 @@ import { Heading, Text, Container, Center } from "@chakra-ui/react";
 
 const Experience = () => {
     return (
-        <Center maxWidth='100%' h='100vh'>
+        <Center maxWidth='100%' h='100vh' id='experience'>
             <Container>
                 <Heading as='h2' size='2xl' textAlign='center'>
                     experience
