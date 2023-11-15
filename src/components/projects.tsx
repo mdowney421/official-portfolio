@@ -4,7 +4,7 @@ import { Heading, Container, Center, VStack, Text } from "@chakra-ui/react";
 const Projects = () => {
 
     return (
-        <Center maxWidth='100%' h='100vh'>
+        <Center maxWidth='100%' h='100vh' id='projects'>
             <Container>
                 <Heading as='h2' size='2xl' textAlign='center'>
                     coding projects
