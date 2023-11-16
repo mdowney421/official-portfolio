@@ -7,10 +7,9 @@ interface skillTileProps {
 
 const SkillTile = ({skillName}: skillTileProps) => {
     return (
-        <Center bg='green.600' p='1rem'>
-            <Container>
-                <Avatar name={skillName} src={'../media/' + skillName + '.png'} />
-                <Text textAlign='center'>
+        <Center bg='rgba(0, 0, 0, 0.5)' p='1rem' m='0.25rem' borderRadius='1.5rem' width='7rem'>
+            <Container centerContent>
+                <Text textAlign='center' textColor='gray.300'>
                     {skillName}
                 </Text>
             </Container>
