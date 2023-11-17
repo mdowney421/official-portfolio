@@ -9,7 +9,8 @@ import {
     DrawerBody,
     useDisclosure,
     Container,
-    Text
+    Text,
+    Link
 } from "@chakra-ui/react";
 
 function NavigationBar() {
@@ -33,21 +34,21 @@ function NavigationBar() {
                     <DrawerHeader fontSize='4xl'>where to?</DrawerHeader>
 
                     <DrawerBody>
-                        <a href="#home">
+                        <Link href="#home">
                             <Text fontSize='3xl'>home</Text>
-                        </a>
-                        <a href="#about">
+                        </Link>
+                        <Link href="#about">
                             <Text fontSize='3xl'>about me</Text>
-                        </a>
-                        <a href="#skills">
+                        </Link>
+                        <Link href="#skills">
                             <Text fontSize='3xl'>skills</Text>
-                        </a>
-                        <a href="#experience">
+                        </Link>
+                        <Link href="#experience">
                             <Text fontSize='3xl'>experience</Text>
-                        </a>
-                        <a href="#projects">
+                        </Link>
+                        <Link href="#projects">
                             <Text fontSize='3xl'>coding projects</Text>
-                        </a>
+                        </Link>
                     </DrawerBody>
                 </DrawerContent>
             </Drawer>
