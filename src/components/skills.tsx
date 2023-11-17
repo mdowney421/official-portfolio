@@ -4,11 +4,11 @@ import SkillTile from "./skillTile";
 
 const Skills = () => {
 
-    const languagesSkillList = ['HTML', 'CSS', 'JavaScript', 'Typescript']
-    const frontEndSkillList = ['jQuery', 'React', 'Bootstrap', 'ChakraUI']
+    const languagesSkillList = ['HTML', 'CSS', 'JavaScript', 'Typescript', 'Python']
+    const frontEndSkillList = ['jQuery', 'React', 'Bootstrap', 'ChakraUI', 'VSCode']
     const backEndSkillList = ['Express.js', 'Node.js', 'Django', 'FastAPI', 'Flask']
-    const databaseSkillList = ['SQL', 'NoSQL', 'PostgreSQL', 'MongoDB']
-    const VCandDevOpsSkillList = ['Git', 'Github', 'Gitlab', 'AWS']
+    const databaseSkillList = ['SQL', 'NoSQL', 'PostgreSQL', 'MongoDB', 'Databricks']
+    const VCandDevOpsSkillList = ['Git', 'Github', 'Gitlab', 'AWS', 'PyCharm']
 
     
     return (
@@ -25,7 +25,7 @@ const Skills = () => {
                             )
                         })}
                     </VStack>
-                    <Center height='18rem'>
+                    <Center height='22rem'>
                         <Divider orientation='vertical' />
                     </Center>
                     <VStack>
@@ -55,7 +55,7 @@ const Skills = () => {
                             )
                         })}
                     </VStack>
-                    <Center height='18rem'>
+                    <Center height='22rem'>
                         <Divider orientation='vertical' />
                     </Center>
                     <VStack>
