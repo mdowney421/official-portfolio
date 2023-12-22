@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Text, Container, Center } from "@chakra-ui/react";
+import { Heading, Text, Container, Center, VStack, Image } from "@chakra-ui/react";
 
 const AboutMe = () => {
     return (
@@ -8,9 +8,13 @@ const AboutMe = () => {
                 <Heading as='h2' size='2xl' textAlign='center' pb='2rem'>
                     about me
                 </Heading>
-                <Text textAlign='center' fontSize='xl'>
-                    as a <strong>results-driven</strong> software developer with an extensive <strong>background in engineering,</strong> i love solving complex challenges and building full-stack web applications. logic-minded by nature, i have a knack for <strong>breaking down large problems</strong> into smaller, solvable parts. i am <strong>self-motivated, team-oriented,</strong> and i get excited to write <strong>clean, scalable code.</strong> i strive to get better at what i do every day, so that i can positively influence others and make a real impact through my work.
-                </Text>
+                <VStack>
+                    <Text textAlign='center' fontSize='xl'>
+                        as a <strong>results-driven</strong> software developer with an extensive <strong>background in engineering,</strong> i love solving complex challenges and building full-stack web applications. logic-minded by nature, i have a knack for <strong>breaking down large problems</strong> into smaller, solvable parts. i am <strong>self-motivated, team-oriented,</strong> and i get excited to write <strong>clean, scalable code.</strong> i strive to get better at what i do every day, so that i can positively influence others and make a real impact through my work.
+                    </Text>
+                    <Image src='pictureofme.jpeg' boxSize='250px' borderRadius='full' mt='1rem' alt='picture of matt downey' />
+                </VStack>
+                
             </Container>
         </Center>
     )
