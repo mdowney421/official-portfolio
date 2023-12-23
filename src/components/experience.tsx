@@ -25,10 +25,10 @@ const Experience = () => {
                     <Text mt='1rem'>
                         october 2022 - present
                     </Text>
-                    <Text mt='1rem'>
-                        lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    <Text mt='1rem' textAlign='justify'>
+                        as a Senior Associate Software Engineer at Amgen, i perform full-stack development for our proprietary web-based business analytics platform. i drive technical innovation, collaborate cross-functionally to address challenges, and optimize platform performance. my role directly influences our company's success by delivering cutting-edge solutions for data-driven decision-making.
                     </Text>
-                    <Heading as='h3' size='md' mt='1rem'>
+                    <Heading as='h3' size='md' mt='1.5rem'>
                         technical certifications:
                     </Heading>
                     <UnorderedList>
