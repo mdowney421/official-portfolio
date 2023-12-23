@@ -6,7 +6,6 @@ import AboutMe from './components/about';
 import Skills from './components/skills';
 import Experience from './components/experience';
 import Projects from './components/projects';
-import LinkContainer from './components/linkContainer';
 import './App.css';
 
 function App() {
@@ -14,7 +13,6 @@ function App() {
     <ChakraProvider>
       <Box bgGradient='linear(to-br, green.300, blue.300)'>
         <NavigationBar />
-        <LinkContainer />
         <Welcome />
         <AboutMe />
         <Skills />

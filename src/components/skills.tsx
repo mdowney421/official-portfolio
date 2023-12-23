@@ -35,7 +35,7 @@ const Skills = () => {
     ]
     
     return (
-        <Center maxWidth='100%' h='100%' id='skills'>
+        <Center maxWidth='100%' h='100%' mb='10rem' id='skills'>
             <Container>
                 <Heading as='h2' size='2xl' textAlign='center' pb='2rem'>
                     some things i know

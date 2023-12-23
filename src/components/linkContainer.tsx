@@ -1,21 +1,19 @@
 import React from "react";
-import { Container } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import GithubLink from "./githubLink";
 import LinkedInLink from "./linkedinLink";
+import { EmailIcon } from "@chakra-ui/icons";
 
 const LinkContainer = () => {
     return (
-        <Container 
+        <Box 
             display='flex' 
-            justifyContent='flex-end'
-            position='fixed' 
-            top='0' 
-            right='0'
-            pt='1rem'
+            justifyContent='center'
         >
             <GithubLink />
+            <EmailIcon boxSize={50} mx='2rem' />
             <LinkedInLink />
-        </Container>
+        </Box>
     )
 }
 
