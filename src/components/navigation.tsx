@@ -10,8 +10,9 @@ import {
     useDisclosure,
     Container,
     Text,
-    Link
+    Link,
 } from "@chakra-ui/react";
+import { HamburgerIcon } from "@chakra-ui/icons";
 
 function NavigationBar() {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -20,7 +21,7 @@ function NavigationBar() {
     return (
         <Container position='fixed' pt='1rem'>
             <Button colorScheme='blackAlpha' textColor='green.100' ref={btnRef} onClick={onOpen}>
-                menu
+                <HamburgerIcon />
             </Button>
             <Drawer
                 isOpen={isOpen}

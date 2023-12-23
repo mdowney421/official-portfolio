@@ -3,7 +3,7 @@ import { Heading, Text, Container, Center, VStack, Image } from "@chakra-ui/reac
 
 const AboutMe = () => {
     return (
-        <Center maxWidth='100%' h='100vh' id='about'>
+        <Center maxWidth='100%' h='100vh' mb='10rem' id='about'>
             <Container>
                 <Heading as='h2' size='2xl' textAlign='center' pb='2rem'>
                     about me

@@ -4,7 +4,6 @@ import {
     Text, 
     Container, 
     Center, 
-    HStack, 
     VStack, 
     UnorderedList, 
     ListItem, 
@@ -14,7 +13,7 @@ import {
 
 const Experience = () => {
     return (
-        <Center maxWidth='100%' h='100vh' id='experience'>
+        <Center maxWidth='100%' h='100vh' mb='10rem' id='experience'>
             <Container>
                 <Heading as='h2' size='2xl' textAlign='center' pb='2rem'>
                     experience
@@ -23,13 +22,13 @@ const Experience = () => {
                     <Heading as='h3' size='md'>
                         senior associate software engineer - Amgen
                     </Heading>
-                    <Text>
+                    <Text mt='1rem'>
                         october 2022 - present
                     </Text>
-                    <Text>
+                    <Text mt='1rem'>
                         lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                     </Text>
-                    <Heading as='h3' size='md'>
+                    <Heading as='h3' size='md' mt='1rem'>
                         technical certifications:
                     </Heading>
                     <UnorderedList>
@@ -39,7 +38,7 @@ const Experience = () => {
                         <ListItem>AWS Solutions Architect (in progress)</ListItem>
                     </UnorderedList>
                     <Link isExternal href="https://docs.google.com/document/d/e/2PACX-1vRLUWCD9iOwOk0RZbmal_23kDpqp2jHNgw2vPlLURkHEwRvX6i-C67hxe7qxg3SbsRM50NMhiQAO32X/pub">
-                        <Button colorScheme='blackAlpha' textColor='green.100'>
+                        <Button colorScheme='blackAlpha' textColor='green.100' mt='1.5rem'>
                             see full resume
                         </Button>
                     </Link>
