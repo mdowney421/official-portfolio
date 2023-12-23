@@ -6,7 +6,6 @@ import AboutMe from './components/about';
 import Skills from './components/skills';
 import Experience from './components/experience';
 import Projects from './components/projects';
-import './App.css';
 
 function App() {
   return (
