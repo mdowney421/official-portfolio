@@ -15,3 +15,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+svg path {
+  fill-opacity: 0.8;
+}
+
+svg:hover path {
+  fill-opacity: 1;
+}
