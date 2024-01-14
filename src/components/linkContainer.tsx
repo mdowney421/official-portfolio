@@ -22,6 +22,8 @@ const LinkContainer = () => {
                 mx='2rem'
                 cursor='pointer'
                 onClick={handleEmailClick}
+                data-aos='fade-up'
+                data-aos-duration='1000'
             />
             <LinkedInLink />
         </Box>
