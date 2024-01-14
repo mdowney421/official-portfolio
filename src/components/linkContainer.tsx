@@ -23,7 +23,6 @@ const LinkContainer = () => {
                 cursor='pointer'
                 onClick={handleEmailClick}
                 data-aos='fade-up'
-                data-aos-offset='0'
                 data-aos-duration='1000'
             />
             <LinkedInLink />
