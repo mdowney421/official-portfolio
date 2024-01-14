@@ -26,7 +26,6 @@ function NavigationBar() {
                 ref={btnRef} 
                 onClick={onOpen} 
                 data-aos='fade-right' 
-                data-aos-offset='0'
                 data-aos-duration='1000'
             >
                 <HamburgerIcon />
