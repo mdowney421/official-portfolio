@@ -24,7 +24,6 @@ const LinkContainer = () => {
                 onClick={handleEmailClick}
                 data-aos='fade-up'
                 data-aos-duration='1000'
-                data-aos-delay='3000'
             />
             <LinkedInLink />
         </Box>
