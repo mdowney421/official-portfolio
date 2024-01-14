@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from 'aos';
 import { Heading, Container, Center } from "@chakra-ui/react";
 import LinkContainer from "./linkContainer";
 
 const Welcome = () => {
+
+    useEffect(() => {
+        AOS.init()
+    }, []);
+
     return (
         <Center maxWidth='100%' h='100vh' mb='10rem' id='home'>
             <Container>
