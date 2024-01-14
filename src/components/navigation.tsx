@@ -27,6 +27,7 @@ function NavigationBar() {
                 onClick={onOpen} 
                 data-aos='fade-right' 
                 data-aos-duration='1000'
+                data-aos-delay='3000'
             >
                 <HamburgerIcon />
             </Button>
@@ -43,19 +44,19 @@ function NavigationBar() {
 
                     <DrawerBody>
                         <Link href="#home">
-                            <Text fontSize='3xl'>home</Text>
+                            <Text fontSize='3xl' data-aos='fade-right' data-aos-delay='200'>home</Text>
                         </Link>
                         <Link href="#about">
-                            <Text fontSize='3xl'>about me</Text>
+                            <Text fontSize='3xl' data-aos='fade-right' data-aos-delay='400'>about me</Text>
                         </Link>
                         <Link href="#skills">
-                            <Text fontSize='3xl'>skills</Text>
+                            <Text fontSize='3xl' data-aos='fade-right' data-aos-delay='600'>skills</Text>
                         </Link>
                         <Link href="#experience">
-                            <Text fontSize='3xl'>experience</Text>
+                            <Text fontSize='3xl' data-aos='fade-right' data-aos-delay='800'>experience</Text>
                         </Link>
                         <Link href="#projects">
-                            <Text fontSize='3xl'>coding projects</Text>
+                            <Text fontSize='3xl' data-aos='fade-right' data-aos-delay='1000'>coding projects</Text>
                         </Link>
                     </DrawerBody>
                 </DrawerContent>
