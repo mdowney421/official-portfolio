@@ -37,7 +37,7 @@ const Skills = () => {
     return (
         <Center maxWidth='100%' h='100%' mb='10rem' id='skills'>
             <Container>
-                <Heading as='h2' size='2xl' textAlign='center' pb='2rem'>
+                <Heading as='h2' size='2xl' textAlign='center' pb='2rem' data-aos='fade-up'>
                     some things i know
                 </Heading>
                 <Flex wrap='wrap' justifyContent='center'>

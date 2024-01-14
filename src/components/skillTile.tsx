@@ -19,11 +19,12 @@ const SkillTile = ({skill}: skillTileProps) => {
             flexDirection='column' 
             justifyContent='center' 
             alignItems='center' 
+            data-aos='fade-up'
         >
-            <Text textAlign='center' textColor='gray.300'>
+            <Text textAlign='center' textColor='gray.300' data-aos='fade-up'>
                 {skill.name}
             </Text>
-            <CircularProgress value={skill.proficiency}>
+            <CircularProgress value={skill.proficiency} data-aos='fade-up'>
                 <CircularProgressLabel color='white'>{skill.proficiency}%</CircularProgressLabel>
             </CircularProgress>
         </Box>

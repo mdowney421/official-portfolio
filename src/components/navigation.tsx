@@ -20,7 +20,14 @@ function NavigationBar() {
   
     return (
         <Container position='fixed' pt='1rem'>
-            <Button colorScheme='blackAlpha' textColor='green.100' ref={btnRef} onClick={onOpen}>
+            <Button 
+                colorScheme='blackAlpha' 
+                textColor='green.100' 
+                ref={btnRef} 
+                onClick={onOpen} 
+                data-aos='fade-right' 
+                data-aos-duration='1000'
+            >
                 <HamburgerIcon />
             </Button>
             <Drawer
