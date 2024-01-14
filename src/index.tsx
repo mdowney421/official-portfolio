@@ -1,9 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+AOS.init({
+  startEvent: 'load'
+})
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
