@@ -43,7 +43,7 @@ const Skills = () => {
                 <Flex wrap='wrap' justifyContent='center'>
                     {skillList.map((skill) => {
                         return (
-                            <SkillTile skill={skill} />
+                            <SkillTile key={skill.name} skill={skill} />
                         )
                     })}
                 </Flex>
