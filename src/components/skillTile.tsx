@@ -1,11 +1,8 @@
 import React from "react";
-import { Text, Box, CircularProgress, CircularProgressLabel } from "@chakra-ui/react";
+import { Text, Box } from "@chakra-ui/react";
 
 interface skillTileProps {
-    skill: {
-        name: string,
-        proficiency: number
-    }
+    skill: string
 }
 
 const SkillTile = ({skill}: skillTileProps) => {
@@ -22,11 +19,8 @@ const SkillTile = ({skill}: skillTileProps) => {
             data-aos='fade-up'
         >
             <Text textAlign='center' textColor='gray.300' data-aos='fade-up'>
-                {skill.name}
+                {skill}
             </Text>
-            <CircularProgress value={skill.proficiency} data-aos='fade-up'>
-                <CircularProgressLabel color='white'>{skill.proficiency}%</CircularProgressLabel>
-            </CircularProgress>
         </Box>
     )
 }
