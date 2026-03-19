@@ -1,68 +1,102 @@
 import React from "react";
-import { 
-    Button, 
-    Drawer, 
-    DrawerOverlay, 
-    DrawerContent, 
-    DrawerCloseButton, 
-    DrawerHeader, 
-    DrawerBody,
-    useDisclosure,
-    Container,
-    Text,
-    Link,
+import {
+  Box,
+  Flex,
+  HStack,
+  Link,
+  IconButton,
+  useDisclosure,
+  useBreakpointValue,
+  useColorModeValue,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  DrawerHeader,
+  DrawerBody,
+  Stack,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
-function NavigationBar() {
-    const { isOpen, onOpen, onClose } = useDisclosure()
-    const btnRef = React.useRef<HTMLButtonElement | null>(null)
-  
-    return (
-        <Container position='fixed' pt='1rem'>
-            <Button 
-                colorScheme='blackAlpha' 
-                textColor='green.100' 
-                ref={btnRef} 
-                onClick={onOpen} 
-                data-aos='fade-right' 
-                data-aos-duration='1000'
-                data-aos-delay='3000'
-            >
-                <HamburgerIcon />
-            </Button>
-            <Drawer
-                isOpen={isOpen}
-                placement='left'
-                onClose={onClose}
-                finalFocusRef={btnRef}
-            >
-                <DrawerOverlay />
-                <DrawerContent bgGradient='linear(to-br, green.200, blue.200)'>
-                    <DrawerCloseButton />
-                    <DrawerHeader fontSize='4xl'>where to?</DrawerHeader>
+const navLinks = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
 
-                    <DrawerBody>
-                        <Link href="#home">
-                            <Text fontSize='3xl' data-aos='fade-right' data-aos-delay='200'>home</Text>
-                        </Link>
-                        <Link href="#about">
-                            <Text fontSize='3xl' data-aos='fade-right' data-aos-delay='400'>about me</Text>
-                        </Link>
-                        <Link href="#skills">
-                            <Text fontSize='3xl' data-aos='fade-right' data-aos-delay='600'>skills</Text>
-                        </Link>
-                        <Link href="#experience">
-                            <Text fontSize='3xl' data-aos='fade-right' data-aos-delay='800'>experience</Text>
-                        </Link>
-                        <Link href="#projects">
-                            <Text fontSize='3xl' data-aos='fade-right' data-aos-delay='1000'>coding projects</Text>
-                        </Link>
-                    </DrawerBody>
-                </DrawerContent>
-            </Drawer>
-        </Container>
-    )
+function NavigationBar() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const isDesktop = useBreakpointValue({ base: false, md: true });
+  const bg = useColorModeValue("rgba(255,255,255,0.8)", "rgba(17,24,39,0.7)");
+  const borderColor = useColorModeValue("gray.200", "gray.700");
+
+  return (
+    <Box
+      as="header"
+      position="sticky"
+      top={0}
+      zIndex="sticky"
+      bg={bg}
+      backdropFilter="saturate(180%) blur(12px)"
+      borderBottom="1px solid"
+      borderColor={borderColor}
+    >
+      <Flex maxW="7xl" mx="auto" py={4} px={{ base: 4, md: 8 }} align="center" justify="space-between">
+        <Link href="#home" fontWeight="semibold" fontSize="lg">
+          Matt Downey
+        </Link>
+
+        {isDesktop ? (
+          <HStack spacing={6}>
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                fontWeight="medium"
+                _hover={{ textDecor: "none", color: "brand.600" }}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </HStack>
+        ) : (
+          <IconButton
+            aria-label="Open navigation menu"
+            icon={<HamburgerIcon />}
+            variant="ghost"
+            onClick={onOpen}
+          />
+        )}
+      </Flex>
+
+      <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader>Navigation</DrawerHeader>
+
+          <DrawerBody>
+            <Stack spacing={4} mt={4}>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  fontSize="lg"
+                  fontWeight="medium"
+                  onClick={onClose}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </Stack>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
+    </Box>
+  );
 }
 
-export default NavigationBar
+export default NavigationBar;
