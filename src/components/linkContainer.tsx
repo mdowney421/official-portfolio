@@ -1,34 +1,34 @@
 import React from "react";
-import { Box } from "@chakra-ui/react";
+import { HStack, IconButton, useColorModeValue } from "@chakra-ui/react";
 import GithubLink from "./githubLink";
 import LinkedInLink from "./linkedinLink";
 import { EmailIcon } from "@chakra-ui/icons";
 
 const LinkContainer = () => {
-    
-    const handleEmailClick = () => {
-        const mailToLink = `mailto:mattdowney421@gmail.com`
-        window.location.href = mailToLink
-    }
+  const iconColor = useColorModeValue("gray.700", "gray.200");
 
-    return (
-        <Box 
-            display='flex' 
-            justifyContent='center'
-        >
-            <GithubLink />
-            <EmailIcon 
-                boxSize={50}
-                mx='2rem'
-                cursor='pointer'
-                onClick={handleEmailClick}
-                data-aos='fade-up'
-                data-aos-duration='1000'
-                data-aos-delay='3000'
-            />
-            <LinkedInLink />
-        </Box>
-    )
-}
+  return (
+    <HStack justify="center" spacing={6}>
+      <GithubLink />
 
-export default LinkContainer
+      <IconButton
+        aria-label="Send email"
+        icon={<EmailIcon boxSize="50px" />}
+        width="50px"
+        height="50px"
+        variant="ghost"
+        color={iconColor}
+        onClick={() =>
+          (window.location.href = "mailto:mattdowney421@gmail.com")
+        }
+        data-aos="fade-up"
+        data-aos-duration="1500"
+        data-aos-delay="1000"
+      />
+
+      <LinkedInLink />
+    </HStack>
+  );
+};
+
+export default LinkContainer;
