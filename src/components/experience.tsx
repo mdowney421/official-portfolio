@@ -1,86 +1,102 @@
 import React from "react";
 import {
+  Box,
   Heading,
   Text,
   Container,
-  Center,
-  VStack,
-  UnorderedList,
+  Stack,
+  List,
   ListItem,
-  Button,
+  ListIcon,
   Link,
+  Button,
+  useColorModeValue,
 } from "@chakra-ui/react";
+import { CheckCircleIcon } from "@chakra-ui/icons";
+
+const experience = [
+  {
+    title: "Senior Associate Software Engineer",
+    company: "Amgen",
+    timeframe: "Oct 2022 - Dec 2025",
+    highlights: [
+      "Led full-stack development for a proprietary business analytics platform used in executive decision making.",
+      "Re-architected ETL and API layers to improve data retrieval speed by 63%.",
+      "Implemented automated testing and CI/CD pipelines, reducing regression bugs by 92%.",
+      "Collaborated with data engineering, analytics, and DevOps teams to improve performance, scalability, and reliability.",
+    ],
+  },
+];
+
+const certifications = [
+  "SAFe 5 Practitioner",
+  "SAFe 5 Agile Software Engineer",
+  "Advanced React by Meta",
+  "AWS Solutions Architect (in progress)",
+];
 
 const Experience = () => {
+  const cardBg = useColorModeValue("white", "gray.800");
+  const textColor = useColorModeValue("gray.600", "gray.300");
+  const sectionBg = useColorModeValue("gray.50", "gray.900");
+
   return (
-    <Center
-      maxWidth="100%"
-      h="100vh"
-      mb="10rem"
-      id="experience"
-      data-aos="fade-up"
-    >
-      <Container data-aos="fade-up">
-        <Heading
-          as="h2"
-          size="2xl"
-          textAlign="center"
-          pb="2rem"
-          data-aos="fade-up"
-        >
-          experience
+    <Box as="section" id="experience" py={20} bg={sectionBg}>
+      <Container maxW="container.lg">
+        <Heading as="h2" size="2xl" textAlign="center" pb={10}>
+          Professional Experience
         </Heading>
-        <VStack>
-          <Heading as="h3" size="md" data-aos="fade-up">
-            senior associate software engineer - Amgen
-          </Heading>
-          <Text mt="1rem" data-aos="fade-up">
-            october 2022 - present
-          </Text>
-          <Text mt="1rem" textAlign="justify" data-aos="fade-up">
-            as a Tech Lead and Senior Associate Software Engineer at Amgen, i
-            lead full-stack development for a proprietary web-based business
-            analytics platform used in executive decision-making across the
-            organization. i oversee architectural direction, code reviews,
-            onboarding, and release management for two development teams.
-            <br />
-            <br />i re-architected key ETL and API layers to improve data
-            retrieval speed by 63%, implemented automated testing and CI/CD
-            pipelines that reduced regression bugs by 92%, and work closely with
-            data engineering, analytics, and DevOps teams to enhance
-            performance, scalability, and long-term reliability. my role focuses
-            on delivering high-impact, maintainable solutions while driving
-            modern engineering practices across the team.
-          </Text>
-          <Heading as="h3" size="md" mt="1.5rem" data-aos="fade-up">
-            technical certifications:
-          </Heading>
-          <UnorderedList>
-            <ListItem data-aos="fade-up">SAFe 5 Practitioner</ListItem>
-            <ListItem data-aos="fade-up">
-              SAFe 5 Agile Software Engineer
-            </ListItem>
-            <ListItem data-aos="fade-up">Advanced React by Meta</ListItem>
-            <ListItem data-aos="fade-up">
-              AWS Solutions Architect (in progress)
-            </ListItem>
-          </UnorderedList>
-          <Link
-            isExternal
-            href="https://docs.google.com/document/d/e/2PACX-1vRLUWCD9iOwOk0RZbmal_23kDpqp2jHNgw2vPlLURkHEwRvX6i-C67hxe7qxg3SbsRM50NMhiQAO32X/pub"
-          >
-            <Button
-              colorScheme="blackAlpha"
-              textColor="green.100"
-              mt="1.5rem"
-              data-aos="fade-up"
+
+        <Stack spacing={10}>
+          {experience.map((role) => (
+            <Box
+              key={role.company}
+              bg={cardBg}
+              p={8}
+              borderRadius="xl"
+              boxShadow="sm"
             >
-              see full resume
-            </Button>
-          </Link>
-        </VStack>
+              <Heading as="h3" size="lg" mb={1}>
+                {role.title}
+              </Heading>
+              <Text fontWeight="medium" color={textColor} />
+
+              <List spacing={3} mt={6}>
+                {role.highlights.map((highlight) => (
+                  <ListItem key={highlight}>
+                    <ListIcon as={CheckCircleIcon} color="brand.500" />
+                    {highlight}
+                  </ListItem>
+                ))}
+              </List>
+            </Box>
+          ))}
+
+          <Box bg={cardBg} p={8} borderRadius="xl" boxShadow="sm">
+            <Heading as="h3" size="lg" mb={4}>
+              Certifications
+            </Heading>
+            <List spacing={3}>
+              {certifications.map((cert) => (
+                <ListItem key={cert}>
+                  <ListIcon as={CheckCircleIcon} color="brand.500" />
+                  {cert}
+                </ListItem>
+              ))}
+            </List>
+
+            <Link
+              href="https://docs.google.com/document/d/e/2PACX-1vRLUWCD9iOwOk0RZbmal_23kDpqp2jHNgw2vPlLURkHEwRvX6i-C67hxe7qxg3SbsRM50NMhiQAO32X/pub"
+              isExternal
+            >
+              <Button mt={6} colorScheme="brand">
+                View full resume
+              </Button>
+            </Link>
+          </Box>
+        </Stack>
       </Container>
-    </Center>
+    </Box>
   );
 };
 

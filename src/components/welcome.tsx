@@ -1,37 +1,59 @@
 import React from "react";
-import { Heading, Container, Center } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  Container,
+  Text,
+  Stack,
+  Button,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import LinkContainer from "./linkContainer";
 
 const Welcome = () => {
-    return (
-        <Center maxWidth='100%' h='100vh' mb='10rem' id='home'>
-            <Container>
-                <Heading 
-                    as='h1' 
-                    size='4xl' 
-                    textAlign='center' 
-                    pb='2.5rem' 
-                    data-aos='zoom-in' 
-                    data-aos-duration='1000'
-                    data-aos-delay='1000'
-                >
-                    hi, i'm matt downey.
-                </Heading>
-                <Heading 
-                    as='h2' 
-                    size='2xl' 
-                    textAlign='center' 
-                    pb='2.5rem' 
-                    data-aos='zoom-in' 
-                    data-aos-duration='1000'
-                    data-aos-delay='2000'
-                >
-                    i build full-stack web applications.
-                </Heading>
-                <LinkContainer />
-            </Container>
-        </Center>
-    )
-}
+  const accent = useColorModeValue("brand.600", "brand.300");
 
-export default Welcome
+  return (
+    <Box as="section" id="home" minH={{ base: "100vh", md: "calc(100vh - 80px)" }} py={{ base: 20, md: 0 }} display="flex" alignItems="center">
+      <Container maxW="container.lg">
+        <Stack spacing={8} align="center" textAlign="center">
+          <Heading as="h1" size="3xl" maxW="30rem">
+            Hi, I’m{" "}
+            <Text as="span" color={accent}>
+              Matt Downey
+            </Text>
+            .
+          </Heading>
+
+          <Heading
+            as="h2"
+            size="lg"
+            fontWeight="normal"
+            maxW="34rem"
+            color="gray.600"
+          >
+            Senior software engineer building reliable, scalable full-stack web
+            applications.
+          </Heading>
+
+          <Stack
+            direction={{ base: "column", sm: "row" }}
+            spacing={4}
+            align="center"
+          >
+            <Button as="a" href="#projects" colorScheme="brand" size="lg">
+              View projects
+            </Button>
+            <Button as="a" href="#contact" size="lg" variant="outline">
+              Let's connect
+            </Button>
+          </Stack>
+
+          <LinkContainer />
+        </Stack>
+      </Container>
+    </Box>
+  );
+};
+
+export default Welcome;

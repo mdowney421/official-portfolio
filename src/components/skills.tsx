@@ -1,75 +1,129 @@
 import React from "react";
-import { Heading, Container, Center, Flex } from "@chakra-ui/react";
-import SkillTile from "./skillTile";
+import {
+  Box,
+  Heading,
+  Container,
+  SimpleGrid,
+  Wrap,
+  WrapItem,
+  Tag,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
+
+const skillGroups = [
+  {
+    title: "Languages",
+    skills: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "Python",
+      "Java",
+      "SQL",
+      "YAML",
+    ],
+  },
+  {
+    title: "Frameworks & Libraries",
+    skills: [
+      "EJS",
+      "jQuery",
+      "Node.js",
+      "Express.js",
+      "React",
+      "Django",
+      "Flask",
+      "FastAPI",
+      "Spring Boot",
+      "Chakra UI",
+      "Bootstrap",
+      "Ant Design",
+      "Sass",
+      "Pydantic",
+      "Pytest",
+      "Jest",
+      "React Testing Library",
+    ],
+  },
+  {
+    title: "Databases",
+    skills: ["SQL", "PostgreSQL", "NoSQL", "MongoDB", "Mongoose"],
+  },
+  {
+    title: "Containerization & DevOps",
+    skills: ["Docker", "Kubernetes", "AWS", "Databricks"],
+  },
+  {
+    title: "Tools & IDEs",
+    skills: [
+      "VS Code",
+      "PyCharm",
+      "Git",
+      "GitHub",
+      "GitLab",
+      "Figma",
+      "Jira",
+      "Postman",
+      "Jupyter Notebook",
+    ],
+  },
+  {
+    title: "Practices & Concepts",
+    skills: [
+      "Agile",
+      "RESTful API Design",
+      "Authentication & Authorization",
+      "Test-driven development",
+      "Clean architecture",
+      "Performance tuning",
+      "Scalability",
+    ],
+  },
+];
 
 const Skills = () => {
-  const skillsList = [
-    "Agile",
-    "Ant Design",
-    "Authentication & Authorization",
-    "AWS",
-    "Bootstrap",
-    "ChakraUI",
-    "CSS",
-    "Databricks",
-    "Docker",
-    "Django",
-    "EJS",
-    "Express.js",
-    "FastAPI",
-    "Figma",
-    "Flask",
-    "Git",
-    "GitHub",
-    "Gitlab",
-    "HTML",
-    "Java",
-    "JavaScript",
-    "Jest",
-    "Jira",
-    "jQuery",
-    "Jupyter Notebook",
-    "Kubernetes",
-    "MongoDB",
-    "Mongoose",
-    "Node.js",
-    "NoSQL",
-    "PostgreSQL",
-    "Postman",
-    "PyCharm",
-    "Pydantic",
-    "Pytest",
-    "Python",
-    "React",
-    "React Testing Library",
-    "RESTful APIs",
-    "Sass",
-    "Spring Boot",
-    "SQL",
-    "Typescript",
-    "VS Code",
-    "YAML",
-  ];
+  const cardBg = useColorModeValue("white", "gray.800");
 
   return (
-    <Center maxWidth="100%" h="100vh" mb="10rem" id="skills">
-      <Container>
-        <Heading
-          as="h2"
-          size="2xl"
-          textAlign="center"
-          pb="2rem"
-          data-aos="fade-up"
-        >
-          some things i know
+    <Box
+      as="section"
+      id="skills"
+      py={20}
+      bg={useColorModeValue("gray.50", "gray.900")}
+    >
+      <Container maxW="container.lg">
+        <Heading as="h2" size="2xl" textAlign="center" pb={10}>
+          Technical Skills
         </Heading>
-        <Flex wrap="wrap" justifyContent="center">
-          {skillsList.map((skill) => {
-            return <SkillTile key={skill} skill={skill} />;
-          })}
-        </Flex>
+
+        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={6}>
+          {skillGroups.map((group) => (
+            <Box
+              key={group.title}
+              bg={cardBg}
+              p={6}
+              borderRadius="xl"
+              boxShadow="sm"
+            >
+              <Text fontSize="lg" fontWeight="semibold" mb={4}>
+                {group.title}
+              </Text>
+              <Wrap spacing={2}>
+                {group.skills.map((skill) => (
+                  <WrapItem key={skill}>
+                    <Tag size="sm" colorScheme="teal" variant="subtle">
+                      {skill}
+                    </Tag>
+                  </WrapItem>
+                ))}
+              </Wrap>
+            </Box>
+          ))}
+        </SimpleGrid>
       </Container>
-    </Center>
+    </Box>
   );
 };
 
