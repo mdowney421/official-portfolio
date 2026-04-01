@@ -30,9 +30,12 @@ const skillGroups = [
     skills: [
       "EJS",
       "jQuery",
+      "Next.js",
       "Node.js",
       "Express.js",
       "React",
+      "Tailwind CSS",
+      "NextAuth",
       "Django",
       "Flask",
       "FastAPI",
@@ -41,6 +44,7 @@ const skillGroups = [
       "Bootstrap",
       "Ant Design",
       "Sass",
+      "Resend",
       "Pydantic",
       "Pytest",
       "Jest",
@@ -53,7 +57,7 @@ const skillGroups = [
   },
   {
     title: "Containerization & DevOps",
-    skills: ["Docker", "Kubernetes", "AWS", "Databricks"],
+    skills: ["Docker", "Kubernetes", "AWS", "Vercel", "Databricks"],
   },
   {
     title: "Tools & IDEs",
@@ -75,6 +79,7 @@ const skillGroups = [
       "Agile",
       "RESTful API Design",
       "Authentication & Authorization",
+      "Observability",
       "Test-driven development",
       "Clean architecture",
       "Performance tuning",
