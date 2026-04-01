@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Box,
+  Flex,
   Heading,
   Container,
   SimpleGrid,
@@ -14,68 +15,126 @@ import {
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
-const projects = [
+type ProjectLink = {
+  label: string;
+  url: string;
+};
+
+type Project = {
+  title: string;
+  description: string;
+  stack: string[];
+  image?: string;
+  links: ProjectLink[];
+};
+
+type ProjectGroup = {
+  title: string;
+  description: string;
+  projects: Project[];
+};
+
+const projectGroups: ProjectGroup[] = [
   {
-    title: "PumpedUp",
+    title: "Active",
     description:
-      "A workout tracker with full user authentication, historical tracking, and performance metrics.",
-    stack: ["EJS", "Bootstrap", "Express", "MongoDB"],
-    image: "pumpedup.png",
-    repos: [
+      "Current production work that reflects how I am building today: modern React architecture, secure integrations, and deployment-aware engineering.",
+    projects: [
       {
-        label: "View code",
-        url: "https://github.com/mdowney421/pumpedup-web-application",
+        title: "62 Moons Band Website",
+        description:
+          "Production-ready band website with a protected admin workflow for managing upcoming shows, GitHub-backed content publishing, typed domain logic, and Vercel analytics/observability.",
+        stack: [
+          "Next.js 16",
+          "TypeScript",
+          "React 19",
+          "Tailwind CSS 4",
+          "NextAuth",
+          "Resend",
+          "Vercel",
+        ],
+        image: "62moons.png",
+        links: [
+          {
+            label: "Live site",
+            url: "https://62moonsband.com/",
+          },
+          {
+            label: "View code",
+            url: "https://github.com/mdowney421/62-moons",
+          },
+        ],
       },
     ],
   },
   {
-    title: "Civil Discourse",
+    title: "Inactive",
     description:
-      "A social platform that highlights news articles and enables constructive discussion with voting and moderation.",
-    stack: ["PostgreSQL", "Express", "React", "Node.js"],
-    image: "civildiscourse.png",
-    repos: [
+      "Earlier projects that remain representative of product thinking, backend integration, and full-stack delivery across different stacks.",
+    projects: [
       {
-        label: "Frontend",
-        url: "https://github.com/mdowney421/civil-discourse-frontend",
+        title: "PumpedUp",
+        description:
+          "A workout tracker with full user authentication, historical tracking, and performance metrics.",
+        stack: ["EJS", "Bootstrap", "Express", "MongoDB"],
+        image: "pumpedup.png",
+        links: [
+          {
+            label: "View code",
+            url: "https://github.com/mdowney421/pumpedup-web-application",
+          },
+        ],
       },
       {
-        label: "Backend",
-        url: "https://github.com/mdowney421/civil-discourse-backend",
-      },
-    ],
-  },
-  {
-    title: "The Shop",
-    description:
-      "E-commerce experience with product browsing, search, cart, and checkout flows backed by a Django API.",
-    stack: ["React", "Django", "SQL"],
-    image: "theshop.png",
-    repos: [
-      {
-        label: "Frontend",
-        url: "https://github.com/JohnKomninos/TheShop",
-      },
-      {
-        label: "Backend",
-        url: "https://github.com/mdowney421/the-shop-back-end",
-      },
-    ],
-  },
-  {
-    title: "StockAid",
-    description:
-      "Portfolio management tool that tracks stock performance and provides curated recommendations.",
-    stack: ["MongoDB", "Express", "React", "Node.js"],
-    image: "stockaid.png",
-    repos: [
-      {
-        label: "Frontend",
-        url: "https://github.com/eckmanmatt/stockaid-frontend/tree/master",
+        title: "Civil Discourse",
+        description:
+          "A social platform that highlights news articles and enables constructive discussion with voting and moderation.",
+        stack: ["PostgreSQL", "Express", "React", "Node.js"],
+        image: "civildiscourse.png",
+        links: [
+          {
+            label: "Frontend",
+            url: "https://github.com/mdowney421/civil-discourse-frontend",
+          },
+          {
+            label: "Backend",
+            url: "https://github.com/mdowney421/civil-discourse-backend",
+          },
+        ],
       },
       {
-        label: "Backend",
-        url: "https://github.com/mdowney421/stockaid-back-end",
+        title: "The Shop",
+        description:
+          "E-commerce experience with product browsing, search, cart, and checkout flows backed by a Django API.",
+        stack: ["React", "Django", "SQL"],
+        image: "theshop.png",
+        links: [
+          {
+            label: "Frontend",
+            url: "https://github.com/JohnKomninos/TheShop",
+          },
+          {
+            label: "Backend",
+            url: "https://github.com/mdowney421/the-shop-back-end",
+          },
+        ],
+      },
+      {
+        title: "StockAid",
+        description:
+          "Portfolio management tool that tracks stock performance and provides curated recommendations.",
+        stack: ["MongoDB", "Express", "React", "Node.js"],
+        image: "stockaid.png",
+        links: [
+          {
+            label: "Frontend",
+            url: "https://github.com/eckmanmatt/stockaid-frontend/tree/master",
+          },
+          {
+            label: "Backend",
+            url: "https://github.com/mdowney421/stockaid-back-end",
+          },
+        ],
       },
     ],
   },
@@ -85,6 +144,11 @@ const Projects = () => {
   const cardBg = useColorModeValue("white", "gray.800");
   const sectionBg = useColorModeValue("white", "gray.950");
   const textColor = useColorModeValue("gray.600", "gray.300");
+  const mutedTextColor = useColorModeValue("gray.500", "gray.400");
+  const placeholderBg = useColorModeValue(
+    "linear(to-r, teal.500, cyan.500)",
+    "linear(to-r, teal.400, blue.500)"
+  );
 
   return (
     <Box as="section" id="projects" py={20} bg={sectionBg}>
@@ -93,56 +157,96 @@ const Projects = () => {
           Projects
         </Heading>
 
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
-          {projects.map((project) => (
-            <Box
-              key={project.title}
-              bg={cardBg}
-              borderRadius="2xl"
-              boxShadow="sm"
-              overflow="hidden"
-            >
-              <Image
-                src={project.image}
-                alt={`${project.title} screenshot`}
-                objectFit="cover"
-                w="100%"
-                h="200px"
-              />
+        <Stack spacing={12}>
+          {projectGroups.map((group) => (
+            <Box key={group.title}>
+              <Stack spacing={3} mb={8}>
+                <Heading as="h3" size="xl">
+                  {group.title} Projects
+                </Heading>
+                <Text color={mutedTextColor} maxW="3xl">
+                  {group.description}
+                </Text>
+              </Stack>
 
-              <Box p={6}>
-                <Stack spacing={4}>
-                  <Heading as="h3" size="lg">
-                    {project.title}
-                  </Heading>
-                  <Text color={textColor}>{project.description}</Text>
-
-                  <Stack direction="row" wrap="wrap" spacing={2}>
-                    {project.stack.map((tech) => (
-                      <Badge key={tech} colorScheme="teal">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </Stack>
-
-                  <Stack direction="row" wrap="wrap" spacing={2}>
-                    {project.repos.map((repo) => (
-                      <Link key={repo.url} href={repo.url} isExternal>
-                        <Button
-                          size="sm"
-                          rightIcon={<ExternalLinkIcon />}
-                          colorScheme="brand"
+              <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
+                {group.projects.map((project) => (
+                  <Box
+                    key={project.title}
+                    bg={cardBg}
+                    borderRadius="2xl"
+                    boxShadow="sm"
+                    overflow="hidden"
+                  >
+                    {project.image ? (
+                      <Image
+                        src={project.image}
+                        alt={`${project.title} screenshot`}
+                        objectFit="cover"
+                        w="100%"
+                        h="200px"
+                      />
+                    ) : (
+                      <Flex
+                        bgGradient={placeholderBg}
+                        h="200px"
+                        px={6}
+                        align="flex-end"
+                      >
+                        <Heading
+                          as="span"
+                          size="md"
+                          color="white"
+                          pb={6}
+                          letterSpacing="wide"
                         >
-                          {repo.label}
-                        </Button>
-                      </Link>
-                    ))}
-                  </Stack>
-                </Stack>
-              </Box>
+                          {project.title}
+                        </Heading>
+                      </Flex>
+                    )}
+
+                    <Box p={6}>
+                      <Stack spacing={4}>
+                        <Heading as="h4" size="lg">
+                          {project.title}
+                        </Heading>
+                        <Text color={textColor}>{project.description}</Text>
+
+                        <Stack direction="row" wrap="wrap" spacing={2}>
+                          {project.stack.map((tech) => (
+                            <Badge key={tech} colorScheme="teal">
+                              {tech}
+                            </Badge>
+                          ))}
+                        </Stack>
+
+                        {project.links.length > 0 ? (
+                          <Stack direction="row" wrap="wrap" spacing={2}>
+                            {project.links.map((link) => (
+                              <Link key={link.url} href={link.url} isExternal>
+                                <Button
+                                  size="sm"
+                                  rightIcon={<ExternalLinkIcon />}
+                                  colorScheme="brand"
+                                >
+                                  {link.label}
+                                </Button>
+                              </Link>
+                            ))}
+                          </Stack>
+                        ) : (
+                          <Text color={mutedTextColor} fontSize="sm">
+                            Live and repository links can be added here.
+                          </Text>
+                        )}
+                      </Stack>
+                    </Box>
+                  </Box>
+                ))}
+              </SimpleGrid>
             </Box>
           ))}
-        </SimpleGrid>
+        </Stack>
       </Container>
     </Box>
   );
