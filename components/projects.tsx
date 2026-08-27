@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   Box,
@@ -53,7 +55,7 @@ const projectGroups: ProjectGroup[] = [
           "Resend",
           "Vercel",
         ],
-        image: "62moons.png",
+        image: "/62moons.png",
         links: [
           {
             label: "Live site",
@@ -79,7 +81,7 @@ const projectGroups: ProjectGroup[] = [
           "AWS Lambda",
           "AWS S3",
         ],
-        image: "grandmascardbox.jpeg",
+        image: "/grandmascardbox.jpeg",
         links: [
           {
             label: "Live site",
@@ -107,7 +109,7 @@ const projectGroups: ProjectGroup[] = [
         description:
           "A workout tracker with full user authentication, historical tracking, and performance metrics.",
         stack: ["EJS", "Bootstrap", "Express", "MongoDB"],
-        image: "pumpedup.png",
+        image: "/pumpedup.png",
         links: [
           {
             label: "View code",
@@ -120,7 +122,7 @@ const projectGroups: ProjectGroup[] = [
         description:
           "A social platform that highlights news articles and enables constructive discussion with voting and moderation.",
         stack: ["PostgreSQL", "Express", "React", "Node.js"],
-        image: "civildiscourse.png",
+        image: "/civildiscourse.png",
         links: [
           {
             label: "Frontend",
@@ -137,7 +139,7 @@ const projectGroups: ProjectGroup[] = [
         description:
           "E-commerce experience with product browsing, search, cart, and checkout flows backed by a Django API.",
         stack: ["React", "Django", "SQL"],
-        image: "theshop.png",
+        image: "/theshop.png",
         links: [
           {
             label: "Frontend",
@@ -154,7 +156,7 @@ const projectGroups: ProjectGroup[] = [
         description:
           "Portfolio management tool that tracks stock performance and provides curated recommendations.",
         stack: ["MongoDB", "Express", "React", "Node.js"],
-        image: "stockaid.png",
+        image: "/stockaid.png",
         links: [
           {
             label: "Frontend",

@@ -9,6 +9,7 @@ This is a simple portfolio website to showcase my work. This site contains a sec
 This site was originally built using only HTML, CSS, and JavaScript and was deployed through Netlify. However, it has now been upgraded to use the tech stack below. 
 
 ## Technologies Used
+* Next.js
 * React
 * TypeScript
 * Chakra UI

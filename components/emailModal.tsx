@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { 
     Button,
@@ -23,7 +25,7 @@ const EmailModal = () => {
         message: "",
     });
 
-    const handleChange = (e: any) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value,
@@ -58,7 +60,7 @@ const EmailModal = () => {
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
                 <ModalContent bgGradient='linear(to-br, green.300, blue.300)'>
-                    <ModalHeader>What's on your mind?</ModalHeader>
+                    <ModalHeader>What&apos;s on your mind?</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
                         <FormControl>

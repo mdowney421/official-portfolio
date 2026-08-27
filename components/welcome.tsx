@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   Box,
@@ -45,7 +47,7 @@ const Welcome = () => {
               View projects
             </Button>
             <Button as="a" href="#contact" size="lg" variant="outline">
-              Let's connect
+              Let&apos;s connect
             </Button>
           </Stack>
 

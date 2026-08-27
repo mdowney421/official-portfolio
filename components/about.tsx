@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   Box,
@@ -33,7 +35,7 @@ const AboutMe = () => {
               fontSize="lg"
               color={useColorModeValue("gray.700", "gray.200")}
             >
-              I'm a results-driven software engineer with a background in
+              I&apos;m a results-driven software engineer with a background in
               engineering, focused on building high-impact web applications that
               solve real problems. I enjoy breaking down complex challenges into
               maintainable systems and delivering consistent value through
@@ -61,7 +63,7 @@ const AboutMe = () => {
 
           <Box display="flex" justifyContent="center">
             <Image
-              src="pictureofme.jpg"
+              src="/pictureofme.jpg"
               maxW="260px"
               borderRadius="2xl"
               boxShadow="lg"

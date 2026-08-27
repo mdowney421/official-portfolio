@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   Box,
@@ -27,14 +29,14 @@ const Contact = () => {
     >
       <Container maxW="container.md" textAlign="center">
         <Heading as="h2" size="2xl" mb={4}>
-          Let's Connect
+          Let&apos;s Connect
         </Heading>
         <Text
           fontSize="lg"
           mb={8}
           color={useColorModeValue("gray.600", "gray.300")}
         >
-          Interested in working together or just want to say hello? I'm always
+          Interested in working together or just want to say hello? I&apos;m always
           happy to chat.
         </Text>
         <Stack
