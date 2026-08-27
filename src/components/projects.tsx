@@ -65,6 +65,36 @@ const projectGroups: ProjectGroup[] = [
           },
         ],
       },
+      {
+        title: "Grandma's Card Box",
+        description:
+          "Full-stack recipe-sharing app with real account auth (JWT, bcrypt, email verification), direct-to-S3 photo uploads, a searchable recipe API, and a serverless Express backend on AWS Lambda behind API Gateway.",
+        stack: [
+          "React 19",
+          "TypeScript",
+          "Vite",
+          "Tailwind CSS 4",
+          "Express",
+          "MongoDB",
+          "AWS Lambda",
+          "AWS S3",
+        ],
+        image: "grandmascardbox.jpeg",
+        links: [
+          {
+            label: "Live site",
+            url: "https://grandmascardbox.com/",
+          },
+          {
+            label: "Frontend",
+            url: "https://github.com/mdowney421/grandmas-card-box-ui",
+          },
+          {
+            label: "Backend",
+            url: "https://github.com/mdowney421/grandmas-card-box-api",
+          },
+        ],
+      },
     ],
   },
   {
