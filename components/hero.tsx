@@ -10,7 +10,7 @@ const floatingBadges = [allSkills[1] ?? "React", allSkills[0] ?? "TypeScript", "
 
 export function Hero() {
   return (
-    <Box as="section" id="home" position="relative" pt={{ base: 32, md: 40 }} pb={{ base: 20, md: 28 }}>
+    <Box as="section" id="home" position="relative" pt={{ base: 12, md: 40 }} pb={{ base: 20, md: 28 }}>
       <Container maxW="7xl">
         <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={{ base: 16, lg: 10 }} alignItems="center">
           <Stack spacing={7}>
