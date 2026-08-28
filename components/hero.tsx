@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Container, Flex, HStack, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import { Box, Container, Flex, HStack, Heading, SimpleGrid, Stack, Text, useBreakpointValue } from "@chakra-ui/react";
 import { MotionBox, MotionLink, MotionSpan } from "./motion-utils";
 import { CodeWindow } from "./code-window";
 import { SocialLinks } from "./social-links";
@@ -9,6 +9,10 @@ import { allSkills } from "@/lib/content";
 const floatingBadges = [allSkills[1] ?? "React", allSkills[0] ?? "TypeScript", "AWS"];
 
 export function Hero() {
+  // Below lg the code panel is CSS-hidden anyway (see display prop below); skip
+  // mounting it there entirely so its framer-motion loops don't run hidden on mobile.
+  const showCodePanel = useBreakpointValue({ base: false, lg: true });
+
   return (
     <Box as="section" id="home" position="relative" pt={{ base: 12, md: 40 }} pb={{ base: 20, md: 28 }}>
       <Container maxW="7xl">
@@ -115,60 +119,64 @@ export function Hero() {
           </Stack>
 
           <Box position="relative" display={{ base: "none", lg: "flex" }} justifyContent="center">
-            <CodeWindow />
+            {showCodePanel && (
+              <>
+                <CodeWindow />
 
-            <MotionBox
-              position="absolute"
-              top="-8%"
-              right="-6%"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: [0, -8, 0] }}
-              transition={{ opacity: { delay: 1, duration: 0.6 }, y: { duration: 4, repeat: Infinity, ease: "easeInOut" } }}
-              bg="night.800"
-              border="1px solid"
-              borderColor="whiteAlpha.100"
-              borderRadius="xl"
-              px={4}
-              py={2}
-              boxShadow="lg"
-            >
-              <HStack spacing={2}>
-                <Box w="8px" h="8px" borderRadius="full" bg="green.400" />
-                <Text fontSize="xs" fontFamily="mono" color="whiteAlpha.700">
-                  build passing
-                </Text>
-              </HStack>
-            </MotionBox>
+                <MotionBox
+                  position="absolute"
+                  top="-8%"
+                  right="-6%"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: [0, -8, 0] }}
+                  transition={{ opacity: { delay: 1, duration: 0.6 }, y: { duration: 4, repeat: Infinity, ease: "easeInOut" } }}
+                  bg="night.800"
+                  border="1px solid"
+                  borderColor="whiteAlpha.100"
+                  borderRadius="xl"
+                  px={4}
+                  py={2}
+                  boxShadow="lg"
+                >
+                  <HStack spacing={2}>
+                    <Box w="8px" h="8px" borderRadius="full" bg="green.400" />
+                    <Text fontSize="xs" fontFamily="mono" color="whiteAlpha.700">
+                      build passing
+                    </Text>
+                  </HStack>
+                </MotionBox>
 
-            {floatingBadges.map((badge, index) => (
-              <MotionBox
-                key={badge}
-                position="absolute"
-                bottom={`${8 + index * 16}%`}
-                left={index % 2 === 0 ? "-8%" : undefined}
-                right={index % 2 !== 0 ? "-10%" : undefined}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1, y: [0, index % 2 === 0 ? -10 : 10, 0] }}
-                transition={{
-                  opacity: { delay: 1.2 + index * 0.15, duration: 0.5 },
-                  scale: { delay: 1.2 + index * 0.15, duration: 0.5 },
-                  y: { duration: 5 + index, repeat: Infinity, ease: "easeInOut" },
-                }}
-                bg="night.800"
-                border="1px solid"
-                borderColor="whiteAlpha.100"
-                borderRadius="lg"
-                px={3}
-                py={1.5}
-                fontFamily="mono"
-                fontSize="xs"
-                color="brand.300"
-                boxShadow="md"
-                display={{ base: "none", xl: "block" }}
-              >
-                {badge}
-              </MotionBox>
-            ))}
+                {floatingBadges.map((badge, index) => (
+                  <MotionBox
+                    key={badge}
+                    position="absolute"
+                    bottom={`${8 + index * 16}%`}
+                    left={index % 2 === 0 ? "-8%" : undefined}
+                    right={index % 2 !== 0 ? "-10%" : undefined}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1, y: [0, index % 2 === 0 ? -10 : 10, 0] }}
+                    transition={{
+                      opacity: { delay: 1.2 + index * 0.15, duration: 0.5 },
+                      scale: { delay: 1.2 + index * 0.15, duration: 0.5 },
+                      y: { duration: 5 + index, repeat: Infinity, ease: "easeInOut" },
+                    }}
+                    bg="night.800"
+                    border="1px solid"
+                    borderColor="whiteAlpha.100"
+                    borderRadius="lg"
+                    px={3}
+                    py={1.5}
+                    fontFamily="mono"
+                    fontSize="xs"
+                    color="brand.300"
+                    boxShadow="md"
+                    display={{ base: "none", xl: "block" }}
+                  >
+                    {badge}
+                  </MotionBox>
+                ))}
+              </>
+            )}
           </Box>
         </SimpleGrid>
       </Container>

@@ -79,6 +79,49 @@ svg path {
   }
 }
 
+.bg-blob {
+  will-change: transform;
+}
+
+.bg-blob-1 {
+  animation: bg-blob-1 18s ease-in-out infinite;
+}
+
+@keyframes bg-blob-1 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(40px, 30px);
+  }
+}
+
+.bg-blob-2 {
+  animation: bg-blob-2 22s ease-in-out infinite;
+}
+
+@keyframes bg-blob-2 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-30px, 40px);
+  }
+}
+
+.bg-blob-3 {
+  animation: bg-blob-3 20s ease-in-out infinite;
+}
+
+@keyframes bg-blob-3 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(25px, -25px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

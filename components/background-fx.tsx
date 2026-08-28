@@ -1,7 +1,4 @@
-"use client";
-
 import { Box } from "@chakra-ui/react";
-import { MotionBox } from "./motion-utils";
 
 export function BackgroundFx() {
   return (
@@ -15,7 +12,8 @@ export function BackgroundFx() {
     >
       <Box position="absolute" inset={0} className="grid-overlay" />
 
-      <MotionBox
+      <Box
+        className="bg-blob bg-blob-1"
         position="absolute"
         top="-10%"
         left="-10%"
@@ -25,11 +23,10 @@ export function BackgroundFx() {
         bg="brand.600"
         opacity={0.18}
         filter="blur(120px)"
-        animate={{ x: [0, 40, 0], y: [0, 30, 0] }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <MotionBox
+      <Box
+        className="bg-blob bg-blob-2"
         position="absolute"
         top="20%"
         right="-15%"
@@ -39,11 +36,10 @@ export function BackgroundFx() {
         bg="accent.500"
         opacity={0.14}
         filter="blur(140px)"
-        animate={{ x: [0, -30, 0], y: [0, 40, 0] }}
-        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <MotionBox
+      <Box
+        className="bg-blob bg-blob-3"
         position="absolute"
         bottom="-10%"
         left="30%"
@@ -53,8 +49,6 @@ export function BackgroundFx() {
         bg="brand.400"
         opacity={0.1}
         filter="blur(120px)"
-        animate={{ x: [0, 25, 0], y: [0, -25, 0] }}
-        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
       />
     </Box>
   );
