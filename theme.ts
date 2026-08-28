@@ -1,43 +1,85 @@
 import { extendTheme, type ThemeConfig } from "@chakra-ui/react";
-import type { StyleFunctionProps } from "@chakra-ui/theme-tools";
 
 const config: ThemeConfig = {
-  initialColorMode: "light",
+  initialColorMode: "dark",
   useSystemColorMode: false,
 };
 
 const theme = extendTheme({
   config,
+  colors: {
+    night: {
+      950: "#04050a",
+      900: "#080a12",
+      800: "#0d1019",
+      700: "#12151f",
+      600: "#191d2b",
+      500: "#232838",
+      400: "#343a4f",
+    },
+    brand: {
+      50: "#eef1ff",
+      100: "#e0e4ff",
+      200: "#c7cdff",
+      300: "#a5adfd",
+      400: "#818cf8",
+      500: "#6366f1",
+      600: "#4f46e5",
+      700: "#4338ca",
+      800: "#3730a3",
+      900: "#302b81",
+    },
+    accent: {
+      300: "#67e8f9",
+      400: "#22d3ee",
+      500: "#06b6d4",
+      600: "#0891b2",
+    },
+  },
   styles: {
-    global: (props: StyleFunctionProps) => ({
+    global: {
+      "html, body": {
+        bg: "night.950",
+        color: "whiteAlpha.900",
+      },
       body: {
-        bg: props.colorMode === "dark" ? "gray.950" : "gray.50",
-        color: props.colorMode === "dark" ? "whiteAlpha.900" : "gray.800",
         lineHeight: "tall",
       },
       "*::selection": {
-        bg: "teal.300",
-        color: "gray.900",
+        bg: "brand.500",
+        color: "white",
       },
-    }),
+      "::-webkit-scrollbar": {
+        width: "10px",
+        height: "10px",
+      },
+      "::-webkit-scrollbar-track": {
+        bg: "night.950",
+      },
+      "::-webkit-scrollbar-thumb": {
+        bg: "night.500",
+        borderRadius: "full",
+      },
+      "::-webkit-scrollbar-thumb:hover": {
+        bg: "brand.600",
+      },
+    },
   },
   fonts: {
-    heading: "Inter, system-ui, sans-serif",
-    body: "Inter, system-ui, sans-serif",
+    heading: "var(--font-sans), Inter, system-ui, sans-serif",
+    body: "var(--font-sans), Inter, system-ui, sans-serif",
+    mono: "var(--font-mono), 'JetBrains Mono', monospace",
   },
-  semanticTokens: {
-    colors: {
-      brand: {
-        50: "#e6fffa",
-        100: "#b2f5ea",
-        200: "#81e6d9",
-        300: "#4fd1c5",
-        400: "#38b2ac",
-        500: "#319795",
-        600: "#2c7a7b",
-        700: "#285e61",
-        800: "#234e52",
-        900: "#1d4044",
+  components: {
+    Button: {
+      baseStyle: {
+        fontWeight: "semibold",
+        borderRadius: "full",
+      },
+    },
+    Container: {
+      baseStyle: {
+        maxW: "7xl",
       },
     },
   },
