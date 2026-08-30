@@ -1,15 +1,17 @@
 "use client";
 
 import { Box, Container, HStack, Link, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import NextLink from "next/link";
 import { SocialLinks } from "./social-links";
 import { social } from "@/lib/content";
+import { OPEN_COOKIE_PREFERENCES_EVENT } from "@/lib/consent";
 
 const sitemap = [
-  { label: "Services", href: "#services" },
-  { label: "Process", href: "#process" },
-  { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "/#services" },
+  { label: "Process", href: "/#process" },
+  { label: "Work", href: "/#work" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export function Footer() {
@@ -65,7 +67,7 @@ export function Footer() {
               Contact
             </Text>
             <Link
-              href="#contact"
+              href="/#contact"
               fontSize="sm"
               color="whiteAlpha.600"
               _hover={{ color: "brand.300", textDecor: "none" }}
@@ -105,6 +107,23 @@ export function Footer() {
           <Text fontSize="xs" color="whiteAlpha.500">
             © {new Date().getFullYear()} Matt Downey. All rights reserved.
           </Text>
+          <HStack spacing={2} fontSize="xs" color="whiteAlpha.500">
+            <Link as={NextLink} href="/privacy" _hover={{ color: "brand.300" }}>
+              Privacy policy
+            </Link>
+            <Text as="span" aria-hidden="true">
+              ·
+            </Text>
+            <Link
+              as="button"
+              onClick={() =>
+                window.dispatchEvent(new Event(OPEN_COOKIE_PREFERENCES_EVENT))
+              }
+              _hover={{ color: "brand.300" }}
+            >
+              Cookie preferences
+            </Link>
+          </HStack>
           <Text fontSize="xs" color="whiteAlpha.500" fontFamily="mono">
             Built with Next.js, TypeScript &amp; Chakra UI
           </Text>

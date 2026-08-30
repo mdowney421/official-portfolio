@@ -21,16 +21,16 @@ import {
 import { MotionBox, MotionLink } from "./motion-utils";
 
 const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Process", href: "#process" },
-  { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "/#services" },
+  { label: "Process", href: "/#process" },
+  { label: "Work", href: "/#work" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 function Logo() {
   return (
-    <Link href="#home" display="flex" alignItems="center" gap={3} _hover={{ textDecor: "none" }}>
+    <Link href="/#home" display="flex" alignItems="center" gap={3} _hover={{ textDecor: "none" }}>
       <Flex
         w="36px"
         h="36px"
@@ -104,7 +104,7 @@ function NavigationBar() {
 
         {isDesktop ? (
           <MotionLink
-            href="#contact"
+            href="/#contact"
             fontSize="sm"
             fontWeight="semibold"
             bgGradient="linear(to-r, brand.500, accent.400)"
@@ -155,7 +155,7 @@ function NavigationBar() {
               ))}
               <Button
                 as="a"
-                href="#contact"
+                href="/#contact"
                 onClick={onClose}
                 mt={4}
                 bgGradient="linear(to-r, brand.500, accent.400)"

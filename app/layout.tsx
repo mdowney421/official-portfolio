@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { Providers } from "./providers";
+import { CookieConsentBanner } from "@/components/cookie-consent-banner";
 
 const sans = Inter({
   subsets: ["latin"],
@@ -37,20 +38,31 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${sans.variable} ${mono.variable}`}>
-      <body>
+      <head>
+        <Script id="gtag-consent-default" strategy="beforeInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            var storedConsent;
+            try { storedConsent = localStorage.getItem("portfolio-cookie-consent"); } catch (e) {}
+            gtag('consent', 'default', {
+              analytics_storage: storedConsent === 'granted' ? 'granted' : 'denied'
+            });`}
+        </Script>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-FMTSTC36H3"
           strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-FMTSTC36H3');
-          `}
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`gtag('js', new Date());
+            gtag('config', 'G-FMTSTC36H3');`}
         </Script>
-        <Providers>{children}</Providers>
+      </head>
+      <body>
+        <Providers>
+          {children}
+          <CookieConsentBanner />
+        </Providers>
         <Analytics />
         <SpeedInsights />
       </body>
