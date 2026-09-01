@@ -133,8 +133,7 @@ export const projectGroups: ProjectGroup[] = [
         status: "in-development",
         links: [
           { label: "Live site", url: "https://dialectrek.com/" },
-          { label: "Frontend", url: "https://github.com/mdowney421/conjugation-website-ui" },
-          { label: "Backend", url: "https://github.com/mdowney421/conjugation-website-api" },
+          { label: "Frontend", url: "https://github.com/mattdowneydev/dialectrek-ui" },
         ],
       },
       {
@@ -146,7 +145,7 @@ export const projectGroups: ProjectGroup[] = [
         image: "/62moons.png",
         links: [
           { label: "Live site", url: "https://62moonsband.com/" },
-          { label: "View code", url: "https://github.com/mdowney421/62-moons" },
+          { label: "View code", url: "https://github.com/mattdowneydev/62-moons" },
         ],
       },
       {
@@ -158,8 +157,8 @@ export const projectGroups: ProjectGroup[] = [
         image: "/grandmascardbox.jpeg",
         links: [
           { label: "Live site", url: "https://grandmascardbox.com/" },
-          { label: "Frontend", url: "https://github.com/mdowney421/grandmas-card-box-ui" },
-          { label: "Backend", url: "https://github.com/mdowney421/grandmas-card-box-api" },
+          { label: "Frontend", url: "https://github.com/mattdowneydev/grandmas-card-box-ui" },
+          { label: "Backend", url: "https://github.com/mattdowneydev/grandmas-card-box-api" },
         ],
       },
     ],
@@ -170,7 +169,7 @@ export const totalProjects = projectGroups.reduce((sum, group) => sum + group.pr
 
 export const social = {
   email: "mattdowney421@gmail.com",
-  github: "https://www.github.com/mdowney421",
+  github: "https://www.github.com/mattdowneydev",
   linkedin: "https://www.linkedin.com/in/matthewpdowney/",
 };
 
