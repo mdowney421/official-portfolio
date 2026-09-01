@@ -98,7 +98,8 @@ export const resumeUrl =
 
 export type ProjectLink = {
   label: string;
-  url: string;
+  url?: string;
+  note?: string;
 };
 
 export type Project = {
@@ -134,6 +135,7 @@ export const projectGroups: ProjectGroup[] = [
         links: [
           { label: "Live site", url: "https://dialectrek.com/" },
           { label: "Frontend", url: "https://github.com/mattdowneydev/dialectrek-ui" },
+          { label: "Backend", note: "Proprietary, source closed" },
         ],
       },
       {
