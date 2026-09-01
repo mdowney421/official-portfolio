@@ -19,10 +19,31 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
+const SITE_URL = "https://mattdowneydev.com";
+const TITLE = "Matt Downey — Full-Stack Software Engineer";
+const DESCRIPTION =
+  "Matt Downey is a full-stack software engineer who designs, builds, and ships reliable web applications — from product engineering to cloud architecture and technical consulting.";
+
 export const metadata: Metadata = {
-  title: "Matt Downey — Full-Stack Software Engineer",
-  description:
-    "Matt Downey is a full-stack software engineer who designs, builds, and ships reliable web applications — from product engineering to cloud architecture and technical consulting.",
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: "/",
+    siteName: "Matt Downey",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+  },
 };
 
 export const viewport: Viewport = {
